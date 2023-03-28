@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="App created with a litteral bread 🍞️">
+    <title>bread</title>
+
+    <script>
+      // for hot reload, you have to manualy delete it in prod
+      if ("WebSocket" in window) {
+        const socket = new WebSocket("ws://localhost:1080");
+    
+        socket.addEventListener("open", (event) => {
+          console.log("WebSocket connection established");
+        });
+        socket.addEventListener("error", (event) => {
+          console.log("WebSocket some error occured");
+        });
+        socket.addEventListener("message", (event) => {
+          location.reload();
+        });
+        socket.addEventListener("close", (event) => {
+          console.log("WebSocket connection closed");
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module" src="./src/app.js" defer></script>
+  </body>
+</html>
