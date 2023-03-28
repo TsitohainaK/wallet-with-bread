@@ -1,11 +1,10 @@
-import Home from "../views/home/home_view.js";
-
+import overview_view from "../views/overview/overview_view.js";
 const routes =  {
   home: {
-    name: "home",
+    name: "overview",
     path: "/",
-    element: Home,
-    title: "Welcome 🍞️"
+    element: overview_view,
+    title: "Your wallet 💳️"
   },
 }
 
